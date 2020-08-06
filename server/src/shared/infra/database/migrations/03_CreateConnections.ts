@@ -10,15 +10,14 @@ export async function up(knex: Knex): Promise<SchemaBuilder> {
       .uuid('user_id')
       .notNullable()
       .references('id')
-      .inTable('classes')
+      .inTable('users')
       .onDelete('CASCADE')
       .onUpdate('CASCADE');
 
-    table.timestamp('created_at').defaultTo('now()').notNullable();
+    table.timestamp('created_at').defaultTo(knex.raw('now()')).notNullable();
   });
 }
 
 export async function down(knex: Knex): Promise<SchemaBuilder> {
-  await knex.schema.dropTable('connections');
-  return knex.raw('drop extension if exists "uuid-ossp"');
+  return knex.schema.dropTable('connections');
 }

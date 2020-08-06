@@ -9,6 +9,9 @@ import ClassesRepository from '@modules/classes/infra/repositories/ClassesReposi
 import IScheduleRepository from '@modules/classes/repositories/IScheduleRepository';
 import ScheduleRepository from '@modules/classes/infra/repositories/ScheduleRepository';
 
+import IConnectionsRepository from '@modules/connections/repositories/IConnectionsRepository';
+import ConnectionsRepository from '@modules/connections/infra/repositories/ConnectionsRepository';
+
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
   UsersRepository,
@@ -22,4 +25,9 @@ container.registerSingleton<IClassesRepository>(
 container.registerSingleton<IScheduleRepository>(
   'ScheduleRepository',
   ScheduleRepository,
+);
+
+container.registerSingleton<IConnectionsRepository>(
+  'ConnectionsRepository',
+  ConnectionsRepository,
 );
