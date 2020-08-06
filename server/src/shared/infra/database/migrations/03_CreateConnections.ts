@@ -19,6 +19,6 @@ export async function up(knex: Knex): Promise<SchemaBuilder> {
 }
 
 export async function down(knex: Knex): Promise<SchemaBuilder> {
-  await knex.raw('drop extension if exists "uuid-ossp"');
-  return knex.schema.dropTable('connections');
+  await knex.schema.dropTable('connections');
+  return knex.raw('drop extension if exists "uuid-ossp"');
 }

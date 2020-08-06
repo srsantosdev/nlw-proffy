@@ -24,6 +24,7 @@
     "prettier"
   ],
   "rules": {
+    "func-names":"off",
     "@typescript-eslint/ban-types": "off",
     "no-return-await": "off",
     "no-useless-return": "off",
