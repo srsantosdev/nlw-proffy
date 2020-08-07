@@ -1,39 +1,56 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
 import { Container } from './styles';
+import api from '../../services/api';
 
-const TeacherItem: React.FC = () => {
+export interface Teacher {
+  id: string;
+  name: string;
+  avatar: string;
+  bio: string;
+  whatsapp: string;
+  cost: string;
+  subject: string;
+  user_id: string;
+}
+
+interface TeacherItemProps {
+  teacher: Teacher;
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+  const createNewConnection = useCallback(() => {
+    api.post('connections', {
+      user_id: teacher.user_id,
+    });
+  }, [teacher.user_id]);
+
   return (
     <Container>
       <header>
-        <img
-          src="https://avatars3.githubusercontent.com/u/40436472?s=460&u=debf2c6f3ef990e94ef9f7297b9d8b7748fb6f30&v=4"
-          alt="Samuel Ramos"
-        />
+        <img src={teacher.avatar} alt={teacher.name} />
         <div>
-          <strong>Samuel Ramos</strong>
-          <span>Matemática</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
-      <p>
-        Entusiasta das melhores tecnologias de matemática avançada.
-        <br />
-        <br />
-        Apaixonado por calcular as coisas e por mudar a vida das pessoas através
-        de calculos.
-      </p>
+      <p>{teacher.bio}</p>
 
       <footer>
         <p>
           Preço/hora
-          <strong>R$ 50,00</strong>
+          <strong>R$ {teacher.cost}</strong>
         </p>
 
-        <button type="button">
+        <a
+          target="_blank"
+          onClick={createNewConnection}
+          href={`https://wa.me/${teacher.whatsapp}`}
+        >
           <img src={whatsappIcon} alt="Whatsapp" />
           Entrar em contato
-        </button>
+        </a>
       </footer>
     </Container>
   );

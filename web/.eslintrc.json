@@ -25,6 +25,9 @@
   },
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "rules": {
+    "react/jsx-no-target-blank": "off",
+    "react/no-array-index-key": "off",
+    "@typescript-eslint/camelcase": "off",
     "react/jsx-one-expression-per-line": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "react/prop-types": "off",
