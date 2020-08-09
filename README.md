@@ -19,7 +19,7 @@ O **Proffy** é uma plataforma de estudos tem como principal objetivo conectar a
 Projeto desenvolvido durante a 2ª edição da **Next Level Week** oferecida pela [Rocketseat](https://rocketseat.com.br/).
 
 <p>
-  <img src="https://user-images.githubusercontent.com/40436472/89738812-f5d7fb00-da51-11ea-9560-de0632cddd6c.gif" alt="Sistema web">
+  <img width=600" src="https://user-images.githubusercontent.com/40436472/89738812-f5d7fb00-da51-11ea-9560-de0632cddd6c.gif" alt="Sistema web">
   <img width=180" src="https://user-images.githubusercontent.com/40436472/89739064-e78ade80-da53-11ea-912e-e103f99c7ae5.gif" alt="App mobile">
 </p>
 
